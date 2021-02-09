@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    
+  >
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list class="sidenav-list">
+      <a mat-list-item href="#">Home</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content">
+    <mat-toolbar color="primary" (click)="onToggleDrawer(drawer,scene)">
+      <img src="assets/logo.svg" style="width: 20px; height: 20px; padding: 10px;" alt="logo">
+      <span>{{ title }}</span>
+    </mat-toolbar>
+    <scene-3d #scene color='rgba(230, 230, 230, 1)'>
+
+      <!-- <object-3d color='green'></object-3d> -->
+      <obj3d modelUrl='assets/3dModel/expo/expo.obj'></obj3d>
+
+      <!-- <obj3d modelUrl='assets/3dModel/cube/3d.obj'></obj3d> -->
+      <!-- <obj3d modelUrl='assets/3dModel/logo1/logo1.obj'></obj3d> -->
+    </scene-3d>
+  </mat-sidenav-content>
+</mat-sidenav-container>
