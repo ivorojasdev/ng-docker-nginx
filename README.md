@@ -16,17 +16,12 @@ Example passing env variables from docker to Angular appication and deploy to NG
     `cd ../..`
 
 
-4) this folder contains a Dockerfile, to build the Image:
+4) the root folder contains a Dockerfile, to build the Image:
 
     `docker build -t server .`
 
 5) to run the image use the parameters below:
 
-    `docker run -p 80:80 -d --name asdf1 -e title='Tittle Variable from Docker' asdf1`
+    `docker run -p 80:80 -d --name server -e title='Tittle Variable from Docker' server`
     
 6) Check in some browser: `http:\\localhost`
-
-
-
-
-
